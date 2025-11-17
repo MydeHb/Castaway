@@ -1,0 +1,1138 @@
+/*==== Обнуление ====*/
+
+@import 'reset.scss';
+
+/*==== / Обнуление ====*/
+
+html,body{
+    font-family: "DM Sans", sans-serif;
+    color: #fff;
+    background: #191919;
+}
+
+.wrapp{
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.container{
+    max-width: 1330px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.main {
+
+    &__episodes {
+        padding: 90px 0 160px 0;
+    }
+
+    &__host {
+        padding: 100px 0 0 0;
+    }
+
+    &__subscribe {
+        padding: 200px 0 100px 0;
+    }
+
+    &__reviews {
+        padding: 100px 0;
+    }
+}
+
+.title {
+    font-size: 64px;
+    line-height: 124%;
+    letter-spacing: 0.05em;
+}
+
+.button{
+    display: block;
+    font-size: 17px;
+    line-height: 159%;
+    padding: 12px 20px;
+    background: #118da8;
+    border-radius: 6px;
+    color: #fff;
+    transition: all .3s;
+    white-space: nowrap;
+
+    &:hover{
+        background: #32c2e2;
+        transform: scale(1.05);
+    }
+}
+
+.overlay{
+    background: #000;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 50;
+    position: fixed;
+    transform: translateY(-100%);
+    transition: all .3s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay--active{
+    opacity: 0.7;
+    visibility: visible;
+    transform: translateX(0%);
+}
+
+.burger{
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    z-index: 150;
+    transition: all .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: none;
+    width: 40px;
+    height: 40px;
+    background: #5c5a5a;
+
+
+    & span{
+        display: block;
+        width: 30px;
+        height: 4px;
+        background: #fff;
+        margin: 5px 0;
+    }
+
+    &::before,&::after{
+        content: '';
+        display: block;
+        width: 30px;
+        height: 4px;
+        background: #fff;
+        transition: all .3s;
+    }
+
+}
+
+.burger--active{
+    top:60%;
+    right: 25%;
+    margin-top: 20px;
+    transform: translateX(50%);
+    background: #5c5a5a;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    & span{
+        display: none;
+    }
+
+    &::before{
+        position: absolute;
+        transform: rotate(315deg);
+    }
+
+    &::after{
+        position: absolute;
+        transform: rotate(-315deg);
+    }
+}
+
+/*==== Header ====*/
+
+.header {
+
+    &__top {
+        padding: 45px 0;
+    }
+
+    &__top-inner {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+    }
+
+    &__menu {
+    }
+
+    &__menu-list {
+        display: flex;
+    }
+
+    &__menu-item {
+        margin-right: 40px;
+
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+
+    &__menu-link {
+        font-size: 17px;
+        line-height: 159%;
+        transition: all .3s;
+
+        &:hover{
+            color: #32c2e2;
+        }
+    }
+
+    &__body {
+        margin-top: 40px;
+    }
+
+    &__body-inner {
+        display: flex;
+    }
+
+    &__image {
+        max-width: 650px;
+        margin-right: 60px;
+        border-radius: 14px;
+        overflow: hidden;
+
+        & img{
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__content {
+        align-self: center;
+    }
+
+    &__title {
+        font-size: 70px;
+        line-height: 126%;
+        letter-spacing: 0.05em;
+        max-width: 536px;
+        margin-bottom: 90px;
+
+        & span{
+            font-weight: 700;
+            font-size: 80px;
+            line-height: 110%;
+            letter-spacing: 0.04em;
+        }
+    }
+
+    &__socials {
+
+        & p{
+            font-size: 15px;
+            line-height: 160%;
+            margin-bottom: 15px;
+        }
+    }
+
+    &__socials-list {
+        display: flex;
+    }
+
+    &__socials-item {
+        margin-right: 17px;
+    }
+
+    &__socials-link {
+
+        & img{
+            width: 100%;
+            height: 100%;
+            transition: all .3s;
+        }
+
+        &:hover img{
+            transform: scale(1.2);
+        }
+    }
+
+}
+
+/*==== / Header ====*/
+
+/*==== Main ====*/
+
+/*=== Episodes ===*/
+
+.episodes {
+
+    &__inner {
+    }
+
+    &__filter-wrapp {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 65px;
+    }
+
+    &__title {
+    }
+
+    &__filter-list {
+        display: flex;
+        align-self: flex-end;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    &__filter-item {
+        margin-right: 2px;
+        background: #5c5a5a;
+
+
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+
+    &__filter-btn {
+        display: block;
+        font-size: 17px;
+        line-height: 159%;
+        padding: 12px 20px;
+        color: #fff;
+        background: transparent;
+        transition: all 0.3s;
+        white-space: nowrap;
+
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+
+    &__filter-btn--active{
+        background: #118da8;
+
+        &:hover{
+            transform: scale(1);
+        }
+    }
+
+    &__sort-list {
+    }
+
+    &__sort-item {
+        display: flex;
+        padding: 40px;
+        background: #000;
+        border-radius: 32px;
+        margin-bottom: 60px;
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+    &__item-img {
+        margin-right: 50px;
+        max-width: 390px;
+        width: 100%;
+        flex: 1 1 auto;
+
+        & img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__content {
+        max-width: 780px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item-tag {
+        display: block;
+        align-self: flex-start;
+        padding: 0 15px;
+        font-size: 18px;
+        line-height: 150%;
+        background: #191919;
+        border-radius: 6px;
+        margin-bottom: 50px;
+        white-space: nowrap;
+    }
+
+    &__item-num {
+        font-size: 17px;
+        line-height: 159%;
+        color: #118da8;
+        margin-bottom: 20px;
+    }
+
+    &__item-text {
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 150%;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 20px;
+        overflow: hidden;
+        max-height: 450px;
+    }
+
+    &__item-title {
+        font-size: 54px;
+        line-height: 110%;
+        letter-spacing: 0.04em;
+        color: #fff;
+        margin-bottom: 30px;
+    }
+
+    &__item-btn {
+        align-self: flex-start;
+    }
+}
+
+/*=== / Episodes ===*/
+
+/*=== Host ===*/
+
+.host {
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__content {
+        max-width: 560px;
+        margin-right: 30px;
+    }
+
+    &__btn {
+        font-size: 18px;
+        line-height: 150%;
+        color: #118da8;
+        display: inline-block;
+        transition: all .3s;
+
+        &:hover &-circle{
+            transform: scale(1.1);
+            background-color: #32c2e2;
+        }
+
+        &:hover{
+            color: #32c2e2;
+        }
+    }
+
+    &__btn-circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: #118da8;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all .3s;
+
+
+        &::before{
+            content: '';
+            display: block;
+            height: 38px;
+            width: 71px;
+            transform: rotate(-90deg);
+            background: url(../img/host/arrow.svg);
+        }
+    }
+
+    &__text {
+        font-size: 22px;
+        line-height: 150%;
+        color: rgba(255, 255, 255, 0.7);
+
+        & span{
+            display: block;
+            margin-bottom: 35px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 30px;
+        color: #fff;
+    }
+
+    &__img {
+        border-radius: 14px;
+        overflow: hidden;
+        max-width: 650px;
+
+        & img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}
+
+
+/*=== / Host ===*/
+
+/*=== Subscribe ===*/
+
+.subscribe {
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        padding: 60px 60px;
+        background: #000;
+        border-radius: 32px;
+    }
+
+    &__left {
+        margin-right: 20px;
+    }
+
+    &__subtitle {
+        font-size: 18px;
+        line-height: 150%;
+        color: #118da8;
+    }
+
+    &__title {
+        max-width: 430px;
+    }
+
+    &__right {
+        max-width: 520px;
+        flex: 1 1 auto;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__input {
+        padding: 25px 20px;
+        background: #191919;
+        border: 1px solid #191919;
+        border-radius: 6px;
+        margin-bottom: 20px;
+        font-size: 24px;
+        line-height: 150%;
+        color: #fff;
+
+        &::placeholder{
+            font-size: 24px;
+            line-height: 150%;
+            color: rgba(255, 255, 255, 0.7);
+        }
+    }
+
+    &__form-btn {
+        align-self: flex-start;
+    }
+}
+
+/*=== / Subscribe ===*/
+
+/*=== Reviews ===*/
+
+.reviews {
+
+    &__inner {
+    }
+
+    &__grid-list {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap:15px;
+    }
+
+    &__grid-item {
+        background: #000;
+        border-radius: 32px;
+        transition: all .3s;
+
+        &:hover{
+            box-shadow: 1px 0px 35px -9px rgba(50,194,226,1)
+        }
+
+        &:hover .reviews__grid-text span{
+            color: #32c2e2;
+        }
+    }
+
+    &__grid-link {
+        border-radius: 32px;
+        display: block;
+        height: 100%;
+        width: 100%;
+        padding: 50px;
+        border:4px solid #000000;
+    }
+
+    &__star-list {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    &__star-item {
+        margin-right: 5px;
+
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+
+    &__grid-text {
+        font-size: 36px;
+        line-height: 120%;
+
+        & span{
+            display: block;
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 20px;
+            transition: all .3s;
+        }
+    }
+}
+
+/*=== / Reviews ===*/
+
+/*==== / Main ====*/
+
+/*==== Footer ====*/
+
+.footer {
+    padding: 100px 0 130px 0;
+
+    &__inner {
+        display: flex;
+    }
+
+    &__left {
+    }
+
+    &__logo {
+    }
+
+    &__socials {
+        margin-top: 20px;
+        display: flex;
+    }
+
+    &__socials-item {
+        margin-right: 12px;
+        transition: all .3s;
+
+        &:hover{
+            transform: scale(1.2);
+        }
+
+        &:hover svg{
+            fill: #32c2e2;
+        }
+    }
+
+    &__socials-link {
+    }
+
+    &__right {
+        display: flex;
+        max-width: 615px;
+        flex: 1 1 auto;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+
+    &__menu {
+    }
+
+    &__menu-list {
+    }
+
+    &__menu-item {
+        margin-bottom: 10px;
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+    &__menu-link {
+        font-size: 17px;
+        line-height: 159%;
+        transition: all .3s;
+
+        &:hover{
+            color: #32c2e2;
+        }
+    }
+
+    &__listenon-list {
+        display: flex;
+    }
+
+    &__listenon-item {
+        margin-right: 17px;
+        
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+
+    &__listenon-link {
+
+        & img{
+            transition: all .3s;
+        }
+
+        &:hover img{
+            transform: scale(1.2);
+        }
+    }
+}
+
+/*==== / Footer ====*/
+
+/*==== Media ====*/
+
+    @media(max-width:1100px){
+
+    /* Main */
+
+        .main{
+
+            &__episodes, &__host, &__subscribe, &__reviews{
+                padding: 40px 0;
+            }
+
+        }
+
+    /* / Main */
+
+        .title{
+            font-size: 54px;
+        }
+
+    /* Header */
+
+        .header{
+
+            &__image{
+                max-width: 430px;
+            }
+
+            &__title{
+                font-size: 60px;
+
+                & span{
+                    font-size: 70px;
+                }
+            }
+
+        }
+
+    /* / Header */
+
+    /* Episodes */
+
+        .episodes{
+
+            &__sort-list{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            &__sort-item{
+                flex-direction: column;
+            }
+
+            &__item-img{
+                margin: 0 0 30px 0;
+            }
+
+            &__item-title{
+                font-size: 44px;
+            }
+
+        }
+
+    /* / Episodes */
+
+    /* Host */
+
+        .host{
+
+            &__inner{
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            &__content{
+                margin: 0;
+            }
+
+            &__img{
+                margin-top: 30px;
+                max-width: 500px;
+            }
+
+        }
+
+    /* / Host */
+
+    /* Subscribe */
+
+        .subscribe{
+
+            &__inner{
+                flex-direction: column;
+            }
+
+            &__left{
+                margin:0 0 30px 0;
+            }
+
+        }
+
+    /* / Subscribe */
+
+    /* Reviews */
+
+        .reviews{
+
+            &__grid-list{
+                grid-template-columns: repeat(2,1fr);
+            }
+
+        }
+
+    /* / Reviews */
+
+    /* Footer */
+
+        .footer{
+            padding: 40px 0;
+
+            &__inner{
+                flex-direction: column;
+            }
+
+            &__left{
+                display: flex;
+                align-items: center;
+            }
+
+            &__socials{
+                margin: 0 0 0 50px;
+            }
+
+            &__right{
+                margin:30px 0 0 0;
+            }
+
+        }
+
+    /* / Footer */
+
+
+    }
+
+    @media(max-width:900px){
+
+    /* Header */
+
+        .header{
+
+            &__image{
+                display: none;
+            }
+
+        }
+
+    /* / Header */
+
+    /* Episodes */
+
+        .episodes{
+
+            &__filter-wrapp{
+                flex-direction: column;
+                margin-bottom: 30px;
+            }
+
+            &__filter-list{
+                margin-top: 40px;
+            }
+
+        }
+
+    /* / Episodes */
+
+    }
+
+    @media(max-width:700px){
+
+        .burger{
+            display: flex;
+        }
+
+    /* Header */
+
+        .header{
+
+            &__menu{
+                background: #5c5a5a;
+                position: fixed;
+                right: 0;
+                top: 0;
+                width: 50%;
+                height: 60%;
+                transform: translateY(-101%);
+                z-index: 100;
+                transition: all .3s;
+            }
+
+            &__menu--active{
+                transform: translateY(0%);
+                border-bottom-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+            }
+
+            &__menu-list{
+                height: 100%;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+            }
+
+            &__menu-item{
+                margin: 0;
+            }
+
+            &__menu-link{
+                padding: 20px;
+            }
+
+        }
+
+    /* / Header */
+
+    /* Reviews */
+
+        .reviews{
+
+            &__grid-list{
+                grid-template-columns: repeat(1,1fr);
+            }
+
+            &__grid-link{
+                padding: 20px;
+            }
+
+        }
+
+    /* / Reviews */
+
+    /* Footer */
+
+        .footer{
+
+            &__menu,&__menu-list{
+                display: none;
+            }
+
+            &__left{
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            &__socials{
+                margin: 30px 0 0 0;
+            }
+
+            &__right{
+                justify-content: flex-end;
+            }
+        }
+
+    /* / Footer */
+
+    }
+
+    @media(max-width:500px){
+
+        .title{
+            font-size: 44px;
+        }
+
+        .burger--active{
+            top: 50%;
+        }
+
+    /* Header */
+
+        .header{
+
+            &__menu{
+                width: 50%;
+                height: 50%;
+            }
+
+        }
+
+    /* / Header */
+
+    /* Episodes */
+
+        .episodes{
+
+            &__filter-list{
+                flex-direction: column;
+                align-self: flex-start;
+            }
+
+            &__filter-item{
+                margin: 0;
+            }
+
+            &__filter-btn{
+                width: 100%;
+                text-align: left;
+            }
+
+            &__item-title{
+                font-size: 34px;
+            }
+
+            &__item-text{
+                font-size: 19px;
+            }
+
+        }
+
+    /* / Episodes */
+
+    /* Subscribe */
+
+        .subscribe{
+
+            &__inner{
+                padding: 30px 30px;
+            }
+
+            &__input{
+                padding: 15px 15px;
+                font-size: 21px;
+
+                &::placeholder{
+                    font-size: 21px;
+                }
+            }
+
+        }
+
+    /* / Subscribe */
+
+    /* Reviews */
+
+        .reviews{
+
+            &__grid-text{
+                font-size: 23px;
+
+                & span{
+                    font-size: 19px;
+                }
+            }
+
+        }
+
+    /* / Reviews */
+
+    }
+
+    @media(max-width:400px){
+
+        .title{
+            font-size: 36px;
+        }
+
+    /* Header */
+
+        .header{
+
+            &__title{
+                font-size: 50px;
+
+                & span{
+                    font-size: 60px;
+                }
+            }
+
+        }
+
+    /* / Header */
+
+    /* Episodes */
+
+        .episodes{
+
+            &__filter-btn{
+                padding: 6px 10px;
+                font-size: 16px;
+            }
+
+            &__sort-item{
+                padding: 25px;
+                margin-bottom: 40px;
+            }
+
+            &__item-img{
+                margin: 0 0 20px 0;
+            }
+
+            &__item-tag{
+                margin-bottom: 20px;
+            }
+
+            &__item-num{
+                margin-bottom: 10px;
+            }
+
+            &__item-title{
+                margin-bottom: 10px;
+            }
+
+        }
+
+    /* / Episodes */
+
+    /* Host */
+
+        .host{
+
+            &__btn-circle{
+                width: 80px;
+                height: 80px;
+            }
+
+        }
+
+    /* / Host */
+
+    }
+
+/*==== / Media ====*/
